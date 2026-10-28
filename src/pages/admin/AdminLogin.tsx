@@ -49,13 +49,14 @@ export const AdminLogin: React.FC = () => {
     <div className="min-h-screen bg-ivory-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans selection:bg-champagne-500 selection:text-charcoal-950">
       
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-600 hover:text-champagne-700 mb-6 transition-colors"
+        <button
+          type="button"
+          onClick={() => navigate('/')}
+          className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-600 hover:text-champagne-700 mb-6 transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Return to Guruji Property Website</span>
-        </a>
+        </button>
 
         <div className="w-14 h-14 rounded-2xl bg-charcoal-900 border border-champagne-500/40 text-champagne-400 flex items-center justify-center font-serif font-black text-2xl mx-auto shadow-md">
           G

@@ -13,14 +13,30 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Properties', href: '#properties' },
-    { label: 'Services', href: '#services' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'About', href: '#about' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', id: 'home' },
+    { label: 'Properties', id: 'properties' },
+    { label: 'Services', id: 'services' },
+    { label: 'Why Us', id: 'why-choose-us' },
+    { label: 'About', id: 'about' },
+    { label: 'Testimonials', id: 'testimonials' },
+    { label: 'Contact', id: 'contact' },
   ];
+
+  const scrollTo = (id: string) => {
+    setMobileMenuOpen(false);
+    if (window.location.hash.includes('/admin')) {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-ivory-100/95 backdrop-blur-md border-b border-sand-200 shadow-sm transition-all">
@@ -28,7 +44,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
         <div className="flex items-center justify-between h-20">
           
           {/* Brand Logo & Name */}
-          <a href="#home" className="flex items-center gap-3.5 group">
+          <button 
+            type="button" 
+            onClick={() => scrollTo('home')} 
+            className="flex items-center gap-3.5 group text-left cursor-pointer"
+          >
             <div className="w-10 h-10 rounded-lg bg-charcoal-900 border border-champagne-500/40 flex items-center justify-center text-champagne-400 font-serif font-black text-xl shadow-sm transition-transform group-hover:scale-105">
               G
             </div>
@@ -40,18 +60,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
                 Gurugram • Sector 57 • ★ 5.0
               </span>
             </div>
-          </a>
+          </button>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                className="text-xs font-semibold text-charcoal-700 hover:text-champagne-700 transition-colors uppercase tracking-widest"
+                type="button"
+                onClick={() => scrollTo(link.id)}
+                className="text-xs font-semibold text-charcoal-700 hover:text-champagne-700 transition-colors uppercase tracking-widest cursor-pointer"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -127,14 +148,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
         <div className="sm:hidden bg-ivory-100 border-t border-sand-200 px-6 py-6 space-y-4 shadow-xl animate-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xs uppercase font-bold text-charcoal-800 hover:text-champagne-600 tracking-wider py-1"
+                type="button"
+                onClick={() => scrollTo(link.id)}
+                className="text-xs uppercase font-bold text-charcoal-800 hover:text-champagne-600 tracking-wider py-1 text-left cursor-pointer"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
