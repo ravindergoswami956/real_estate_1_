@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
             <a href="#contact" className="hover:text-charcoal-300 transition-colors">Legal Disclaimer</a>
             <span>•</span>
             <a 
-              href="/admin/login" 
+              href="#/admin/login" 
               className="text-charcoal-500 hover:text-champagne-400 flex items-center gap-1 transition-colors"
               title="Admin Portal Login"
             >

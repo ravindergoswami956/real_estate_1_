@@ -116,7 +116,7 @@ export const PublicHome: React.FC = () => {
           <span>Visit</span>
         </button>
         <a
-          href="/admin/login"
+          href="#/admin/login"
           className="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-700 text-champagne-400 hover:text-white flex items-center justify-center shrink-0"
           title="Admin Portal"
         >

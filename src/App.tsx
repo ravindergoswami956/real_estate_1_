@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { PublicHome } from './pages/public/PublicHome';
 import { AdminLogin } from './pages/admin/AdminLogin';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 
 export function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Public Website */}
         <Route path="/" element={<PublicHome />} />
@@ -20,7 +20,7 @@ export function App() {
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

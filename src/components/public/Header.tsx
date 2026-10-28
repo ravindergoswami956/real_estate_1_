@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
 
             {/* Clear Admin Option */}
             <a
-              href="/admin/login"
+              href="#/admin/login"
               className="px-3 py-2 rounded-lg border border-sand-300 hover:border-champagne-500 bg-white hover:bg-ivory-50 text-charcoal-800 hover:text-champagne-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-sm"
               title="Admin Portal Login"
             >
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
           {/* Mobile Menu Toggle */}
           <div className="flex sm:hidden items-center gap-2">
             <a
-              href="/admin/login"
+              href="#/admin/login"
               className="p-2 rounded-lg border border-sand-300 bg-white text-charcoal-800"
               title="Admin Login"
             >
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
           <div className="pt-4 border-t border-sand-300 space-y-2.5">
             {/* Mobile Admin Button */}
             <a
-              href="/admin/login"
+              href="#/admin/login"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-2.5 rounded-lg bg-white border border-champagne-500/50 text-charcoal-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
             >
