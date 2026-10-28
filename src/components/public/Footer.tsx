@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Phone, MessageCircle, Lock, Shield, Star } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-charcoal-950 text-charcoal-400 text-xs pt-16 pb-12 border-t border-charcoal-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +71,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom copyright & Discreet Admin Link */}
+        {/* Bottom copyright & Working Admin Link */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-charcoal-500">
           <div>
             © {new Date().getFullYear()} Guruji Property Gurugram. All rights reserved.
@@ -79,14 +82,15 @@ export const Footer: React.FC = () => {
             <span>•</span>
             <a href="#contact" className="hover:text-charcoal-300 transition-colors">Legal Disclaimer</a>
             <span>•</span>
-            <a 
-              href="#/admin/login" 
-              className="text-charcoal-500 hover:text-champagne-400 flex items-center gap-1 transition-colors"
+            <button 
+              type="button"
+              onClick={() => navigate('/admin/login')}
+              className="text-charcoal-500 hover:text-champagne-400 flex items-center gap-1 transition-colors cursor-pointer"
               title="Admin Portal Login"
             >
-              <Lock className="w-3 h-3" />
+              <Lock className="w-3 h-3 text-champagne-600" />
               <span>Admin Portal</span>
-            </a>
+            </button>
           </div>
         </div>
 

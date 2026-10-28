@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, Menu, X, Lock, ShieldCheck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Phone, MessageCircle, Menu, X, Lock } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 
 interface HeaderProps {
@@ -8,6 +9,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }) => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -80,26 +82,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
               <MessageCircle className="w-4 h-4" />
             </a>
 
-            {/* Clear Admin Option */}
-            <a
-              href="#/admin/login"
-              className="px-3 py-2 rounded-lg border border-sand-300 hover:border-champagne-500 bg-white hover:bg-ivory-50 text-charcoal-800 hover:text-champagne-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-sm"
+            {/* Clear, Working Admin Option */}
+            <button
+              type="button"
+              onClick={() => navigate('/admin/login')}
+              className="px-3 py-2 rounded-lg border border-sand-300 hover:border-champagne-500 bg-white hover:bg-ivory-50 text-charcoal-800 hover:text-champagne-700 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-sm cursor-pointer"
               title="Admin Portal Login"
             >
               <Lock className="w-3.5 h-3.5 text-champagne-700" />
               <span>Admin</span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
           <div className="flex sm:hidden items-center gap-2">
-            <a
-              href="#/admin/login"
-              className="p-2 rounded-lg border border-sand-300 bg-white text-charcoal-800"
+            <button
+              type="button"
+              onClick={() => navigate('/admin/login')}
+              className="p-2 rounded-lg border border-sand-300 bg-white text-charcoal-800 cursor-pointer"
               title="Admin Login"
             >
               <Lock className="w-4 h-4 text-champagne-700" />
-            </a>
+            </button>
             <a
               href={`tel:${BUSINESS_INFO.phoneRaw}`}
               className="p-2 rounded-lg bg-champagne-500 text-charcoal-950 font-bold"
@@ -136,14 +140,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
 
           <div className="pt-4 border-t border-sand-300 space-y-2.5">
             {/* Mobile Admin Button */}
-            <a
-              href="#/admin/login"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 rounded-lg bg-white border border-champagne-500/50 text-charcoal-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm"
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                navigate('/admin/login');
+              }}
+              className="w-full py-2.5 rounded-lg bg-white border border-champagne-500/50 text-charcoal-900 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm cursor-pointer"
             >
               <Lock className="w-3.5 h-3.5 text-champagne-700" />
               <span>Admin Portal Access</span>
-            </a>
+            </button>
 
             <button
               onClick={() => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DatabaseService } from '../../services/database';
 import { Property, PropertyCategory } from '../../types/property';
 import { Header } from '../../components/public/Header';
@@ -16,6 +17,7 @@ import { Phone, MessageCircle, Calendar, Lock } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 
 export const PublicHome: React.FC = () => {
+  const navigate = useNavigate();
   const [properties, setProperties] = useState<Property[]>([]);
   const [activeCategory, setActiveCategory] = useState<'all' | PropertyCategory>('all');
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
@@ -115,13 +117,14 @@ export const PublicHome: React.FC = () => {
           <Calendar className="w-3.5 h-3.5" />
           <span>Visit</span>
         </button>
-        <a
-          href="#/admin/login"
-          className="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-700 text-champagne-400 hover:text-white flex items-center justify-center shrink-0"
+        <button
+          type="button"
+          onClick={() => navigate('/admin/login')}
+          className="p-2.5 rounded-lg bg-charcoal-900 border border-charcoal-700 text-champagne-400 hover:text-white flex items-center justify-center shrink-0 cursor-pointer"
           title="Admin Portal"
         >
           <Lock className="w-3.5 h-3.5" />
-        </a>
+        </button>
       </div>
 
       {/* Interactive Modals */}
