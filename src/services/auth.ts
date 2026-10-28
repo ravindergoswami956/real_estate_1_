@@ -8,10 +8,24 @@ export interface AdminUser {
 
 const LOCAL_SESSION_KEY = 'guruji_admin_session_auth';
 
+// SHA-256 hash of authorized master admin credential (no plaintext passwords stored)
+const AUTHORIZED_ADMIN_HASH = 'b70e91d38289d90bf36f56a8dbc2abefd91c399cbff96801eec1302ac7254a1a';
+
+async function hashPassword(plainText: string): Promise<string> {
+  if (typeof crypto !== 'undefined' && crypto.subtle) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(plainText);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+  return '';
+}
+
 export const AuthService = {
   // Check if admin is currently authenticated
   async getCurrentUser(): Promise<AdminUser | null> {
-    // 1. Check local session storage first
+    // 1. Check local session storage
     try {
       const stored = sessionStorage.getItem(LOCAL_SESSION_KEY);
       if (stored) {
@@ -49,32 +63,11 @@ export const AuthService = {
     return null;
   },
 
-  // Login handler
+  // Secure Login Handler
   async login(email: string, password: string): Promise<{ user: AdminUser | null; error: string | null }> {
     const cleanEmail = email.trim().toLowerCase();
 
-    // 1. Direct Admin Master Password Check
-    // Master Admin Password: "Admin77#!"
-    const validMasterPasswords = ['Admin77#!', 'Guruji@Sector57', 'admin12345'];
-    
-    if (validMasterPasswords.includes(password)) {
-      const adminEmail = cleanEmail || 'admin@gurujiproperty.com';
-      const user: AdminUser = {
-        id: `admin-${Date.now()}`,
-        email: adminEmail,
-        role: 'admin'
-      };
-      sessionStorage.setItem(
-        LOCAL_SESSION_KEY,
-        JSON.stringify({
-          ...user,
-          expiresAt: Date.now() + 1000 * 60 * 60 * 24 // 24 hours
-        })
-      );
-      return { user, error: null };
-    }
-
-    // 2. Fallback to Supabase Auth cloud credentials if configured
+    // 1. Attempt Supabase Auth cloud authentication
     if (isSupabaseConfigured && supabase) {
       try {
         const { data, error } = await supabase.auth.signInWithPassword({
@@ -91,19 +84,42 @@ export const AuthService = {
             LOCAL_SESSION_KEY,
             JSON.stringify({
               ...user,
-              expiresAt: Date.now() + 1000 * 60 * 60 * 24
+              expiresAt: Date.now() + 1000 * 60 * 60 * 24 // 24 hours
             })
           );
           return { user, error: null };
         }
       } catch (err: any) {
-        console.warn('Supabase auth sign in error:', err);
+        console.warn('Supabase signInWithPassword:', err);
       }
+    }
+
+    // 2. Cryptographic Hash Authorization (Secure fallback without plaintext credentials)
+    try {
+      const computedHash = await hashPassword(password);
+      if (computedHash && computedHash === AUTHORIZED_ADMIN_HASH) {
+        const adminEmail = cleanEmail || 'admin@gurujiproperty.com';
+        const user: AdminUser = {
+          id: `admin-${Date.now()}`,
+          email: adminEmail,
+          role: 'admin'
+        };
+        sessionStorage.setItem(
+          LOCAL_SESSION_KEY,
+          JSON.stringify({
+            ...user,
+            expiresAt: Date.now() + 1000 * 60 * 60 * 24
+          })
+        );
+        return { user, error: null };
+      }
+    } catch (hashErr) {
+      console.error('Cryptographic verification failed:', hashErr);
     }
 
     return { 
       user: null, 
-      error: 'Invalid administrator credentials. Password for admin is: Admin77#!' 
+      error: 'Invalid administrator email or password.' 
     };
   },
 

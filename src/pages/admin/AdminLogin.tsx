@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/auth';
-import { Lock, Mail, Key, ShieldCheck, ArrowLeft, AlertCircle, Check } from 'lucide-react';
+import { Lock, Mail, Key, ShieldCheck, ArrowLeft, AlertCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 
 export const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('admin@gurujiproperty.com');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +23,12 @@ export const AdminLogin: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+
+    if (!email.trim() || !password) {
+      setError('Please enter both email and password.');
+      return;
+    }
+
     setIsLoading(true);
 
     try {
@@ -75,44 +81,37 @@ export const AdminLogin: React.FC = () => {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="text-xs font-semibold text-charcoal-800 block mb-1">
-                Admin Email / Username
+              <label className="text-xs font-semibold text-charcoal-800 block mb-1.5">
+                Admin Email Address
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3" />
                 <input
-                  type="text"
+                  type="email"
                   required
+                  autoComplete="email"
                   placeholder="admin@gurujiproperty.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
+                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
                 />
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="text-xs font-semibold text-charcoal-800">
-                  Password
-                </label>
-                <button
-                  type="button"
-                  onClick={() => setPassword('Admin77#!')}
-                  className="text-[10px] text-champagne-700 hover:underline font-semibold"
-                >
-                  Fill Master Password
-                </button>
-              </div>
+              <label className="text-xs font-semibold text-charcoal-800 block mb-1.5">
+                Admin Password
+              </label>
               <div className="relative">
                 <Key className="w-4 h-4 text-charcoal-400 absolute left-3.5 top-3" />
                 <input
                   type="password"
                   required
-                  placeholder="Enter admin password (Admin77#!)"
+                  autoComplete="current-password"
+                  placeholder="••••••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
+                  className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
                 />
               </div>
             </div>
@@ -120,7 +119,7 @@ export const AdminLogin: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-4 rounded-xl bg-champagne-500 hover:bg-champagne-600 text-charcoal-950 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+              className="w-full py-3 px-4 rounded-xl bg-champagne-500 hover:bg-champagne-600 text-charcoal-950 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm disabled:opacity-50"
             >
               {isLoading ? (
                 <span>Authenticating...</span>
@@ -133,26 +132,10 @@ export const AdminLogin: React.FC = () => {
             </button>
           </form>
 
-          {/* Master Password Callout Box */}
-          <div className="p-4 rounded-xl bg-ivory-100 border border-sand-300 text-xs text-charcoal-700 space-y-2">
-            <div className="flex items-center gap-1.5 font-bold text-charcoal-900">
-              <ShieldCheck className="w-4 h-4 text-champagne-700" />
-              <span>Owner Access Credentials:</span>
-            </div>
-            <div className="space-y-1 text-[11px]">
-              <div>
-                <span className="text-charcoal-500">Email:</span>{' '}
-                <code className="bg-white px-1.5 py-0.5 rounded border border-sand-200 text-charcoal-900 font-semibold">
-                  admin@gurujiproperty.com
-                </code>
-              </div>
-              <div>
-                <span className="text-charcoal-500">Password:</span>{' '}
-                <code className="bg-white px-1.5 py-0.5 rounded border border-sand-200 text-champagne-800 font-bold">
-                  Admin77#!
-                </code>
-              </div>
-            </div>
+          {/* Security Notice */}
+          <div className="pt-4 border-t border-sand-100 flex items-center justify-center gap-1.5 text-[11px] text-charcoal-500">
+            <ShieldCheck className="w-3.5 h-3.5 text-champagne-700" />
+            <span>Authorized Personnel Only • Sector 57 Gurugram Desk</span>
           </div>
 
         </div>

@@ -25,32 +25,7 @@ const DEFAULT_SETTINGS: BusinessSettings = {
   googleMapsUrl: 'https://maps.google.com/?q=Guruji+Property+SHOP-54+MKM+Market+Road+Block+G+Sushant+Lok+2+Sector+57+Gurugram+Haryana+122011'
 };
 
-const INITIAL_PROPERTIES: Property[] = [
-  {
-    id: 'prop-sec57-builder-floor-1',
-    title: '4 BHK Luxury Builder Floor in Sushant Lok 2',
-    propertyType: 'Residential',
-    category: 'buy',
-    listingStatus: 'Available',
-    location: 'Block G, Sushant Lok 2, Sector 57, Gurugram',
-    sector: 'Sector 57',
-    price: '₹ 3.65 Cr',
-    priceNumeric: 36500000,
-    area: 3200,
-    bedrooms: 4,
-    bathrooms: 4,
-    description: 'Ultra-luxurious park-facing independent builder floor on a 350 sq.yd plot in Sector 57, Sushant Lok 2. Walking distance to MKM Market and Sector 56 Metro Station. Features Italian marble, Hafele modular kitchen, dedicated stilt car parking, and private elevator.',
-    amenities: ['Stilt Parking', 'Private Otis Lift', 'Park Facing', 'Italian Marble', 'Modular Kitchen', '100% Power Backup', 'Gated Security'],
-    images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80'
-    ],
-    isFeatured: true,
-    contactPhone: '084471 95227',
-    contactWhatsApp: '918447195227',
-    createdAt: new Date().toISOString()
-  }
-];
+const INITIAL_PROPERTIES: Property[] = [];
 
 function getLocal<T>(key: string, defaultVal: T): T {
   try {
