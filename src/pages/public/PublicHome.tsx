@@ -74,7 +74,7 @@ export const PublicHome: React.FC = () => {
         onRequestVisit={(p) => handleOpenSiteVisit(p)}
       />
 
-      {/* 4. Why Choose Guruji Property Section */}
+      {/* 4. Why Choose Section */}
       <WhyChooseUs />
 
       {/* 5. Our Core Services */}
@@ -102,7 +102,7 @@ export const PublicHome: React.FC = () => {
           <span>Call Office</span>
         </a>
         <a
-          href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Guruji Property Gurugram! I would like to consult about properties.')}`}
+          href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(`Hello ${BUSINESS_INFO.name}! I would like to consult about properties.`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-sm"

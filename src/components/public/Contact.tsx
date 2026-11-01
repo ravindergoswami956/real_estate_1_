@@ -59,13 +59,13 @@ export const Contact: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold text-champagne-700 uppercase tracking-widest block mb-2">
-            Sector 57 Consulting Office
+            Golf Course Road Executive Office
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-charcoal-900 leading-tight">
             Connect With Our Advisors
           </h2>
           <p className="text-sm text-charcoal-700/80 mt-3 font-light">
-            Visit our office in MKM Market or leave your requirements below. Direct advisory without intermediary markups.
+            Visit our office at Horizon Executive Suites or leave your requirements below. Direct advisory without intermediary markups.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
                   <div>
                     <strong className="text-charcoal-900 block font-semibold mb-0.5">Direct WhatsApp Helpline:</strong>
                     <a
-                      href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Guruji Property Gurugram! I would like to consult regarding properties in Gurugram.')}`}
+                      href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(`Hello ${BUSINESS_INFO.name}! I would like to consult regarding properties in Gurugram.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-700 font-bold hover:underline text-sm block"
@@ -154,8 +154,8 @@ export const Contact: React.FC = () => {
             {/* Embedded Location Map */}
             <div className="rounded-2xl overflow-hidden border border-sand-200 h-64 bg-sand-100 shadow-luxury">
               <iframe
-                title="Guruji Property Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14035.79240898565!2d77.06734!3d28.42084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d226a27e78d91%3A0xb35e80fa9c90ec15!2sSector%2057%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                title="Office Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14035.79240898565!2d77.09734!3d28.46084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18d45112345%3A0xb35e80fa9c90ec15!2sGolf%20Course%20Rd%2C%20DLF%20Phase%205%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 className="w-full h-full border-0"
                 loading="lazy"
               ></iframe>
@@ -259,7 +259,7 @@ export const Contact: React.FC = () => {
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="e.g. Looking for a park-facing 4 BHK luxury builder floor in Sushant Lok 2 or Sector 57 with 2 car parks..."
+                      placeholder="e.g. Looking for a luxury 4 BHK residence or penthouse on Golf Course Road or DLF Phase 5 with 3 parking spaces..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500 transition-colors resize-none"

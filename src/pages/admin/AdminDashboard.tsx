@@ -48,7 +48,6 @@ import {
   DollarSign
 } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
-import ravinderPhoto from '../../assets/ravinder-goswami.png';
 
 interface Toast {
   id: string;
@@ -93,7 +92,7 @@ export const AdminDashboard: React.FC = () => {
   const [formCategory, setFormCategory] = useState<PropertyCategory>('buy');
   const [formStatus, setFormStatus] = useState<ListingStatus>('Available');
   const [formLocation, setFormLocation] = useState('');
-  const [formSector, setFormSector] = useState('Sector 57');
+  const [formSector, setFormSector] = useState('DLF Phase 5');
   const [formPrice, setFormPrice] = useState('');
   const [formPriceNumeric, setFormPriceNumeric] = useState<number>(0);
   const [formArea, setFormArea] = useState<number>(1800);
@@ -194,8 +193,8 @@ export const AdminDashboard: React.FC = () => {
     setFormPropertyType('Residential');
     setFormCategory('buy');
     setFormStatus('Available');
-    setFormLocation('Block G, Sushant Lok 2, Sector 57, Gurugram');
-    setFormSector('Sector 57');
+    setFormLocation('Level 5, Horizon Executive Suites, Golf Course Road, Gurugram');
+    setFormSector('DLF Phase 5');
     setFormPrice('₹ 2.50 Cr');
     setFormPriceNumeric(25000000);
     setFormArea(2200);
@@ -277,7 +276,7 @@ export const AdminDashboard: React.FC = () => {
       category: formCategory,
       listingStatus: formStatus,
       location: formLocation.trim(),
-      sector: formSector.trim() || 'Sector 57',
+      sector: formSector.trim() || 'DLF Phase 5',
       price: formPrice.trim(),
       priceNumeric: formPriceNumeric || 0,
       area: formArea || 1000,
@@ -523,11 +522,11 @@ export const AdminDashboard: React.FC = () => {
           
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-charcoal-900 border border-champagne-500/40 text-champagne-400 font-serif font-black text-base flex items-center justify-center">
-              G
+              A
             </div>
             <div>
               <h1 className="font-serif font-bold text-sm text-white tracking-wide">
-                Guruji Property Gurugram
+                {BUSINESS_INFO.name}
               </h1>
               <p className="text-[10px] text-champagne-400 font-semibold tracking-wider uppercase">
                 Owner & Admin Dashboard
@@ -624,19 +623,11 @@ export const AdminDashboard: React.FC = () => {
             />
           </div>
 
-          {/* Sidebar Footer with Developer Badge & Cloud Status */}
+          {/* Sidebar Footer with Cloud Status */}
           <div className="pt-4 border-t border-sand-200 mt-4 space-y-3">
-            {/* Developer Credit in Sidebar */}
-            <div className="p-2.5 rounded-xl bg-ivory-50 border border-sand-200 flex items-center gap-2.5">
-              <img 
-                src={ravinderPhoto} 
-                alt="Ravinder Goswami" 
-                className="w-8 h-8 rounded-full object-cover border border-champagne-500 shadow-sm"
-              />
-              <div className="text-[10px] leading-tight">
-                <span className="text-charcoal-400 block font-medium">Developed by</span>
-                <span className="font-bold text-charcoal-900 font-serif">Ravinder Goswami</span>
-              </div>
+            <div className="p-2.5 rounded-xl bg-ivory-50 border border-sand-200 flex items-center justify-between text-charcoal-700">
+              <span className="text-[11px] font-medium">Logged in as</span>
+              <span className="text-xs font-bold text-charcoal-900">Admin</span>
             </div>
 
             <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 text-[11px] text-emerald-900 flex items-center justify-between">
@@ -869,7 +860,7 @@ export const AdminDashboard: React.FC = () => {
                                 <Phone className="w-3.5 h-3.5" />
                               </a>
                               <a
-                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${enq.customerName}, thank you for contacting Guruji Property Gurugram regarding ${enq.propertyTitle || 'properties in Gurugram'}. How can we assist you?`)}`}
+                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${enq.customerName}, thank you for contacting ${BUSINESS_INFO.name} regarding ${enq.propertyTitle || 'properties in Gurugram'}. How can we assist you?`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
@@ -944,7 +935,7 @@ export const AdminDashboard: React.FC = () => {
                                 <Phone className="w-3.5 h-3.5" />
                               </a>
                               <a
-                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${v.customerName}, your site visit request with Guruji Property Gurugram on ${v.preferredDate} (${v.preferredTime}) for "${v.propertyTitle || 'Property'}" is received.`)}`}
+                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${v.customerName}, your site visit request with ${BUSINESS_INFO.name} on ${v.preferredDate} (${v.preferredTime}) for "${v.propertyTitle || 'Property'}" is received.`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
@@ -1258,7 +1249,7 @@ export const AdminDashboard: React.FC = () => {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Block G, Sushant Lok 2, Sector 57, Gurugram"
+                      placeholder="e.g. Level 5, Horizon Executive Suites, Golf Course Road, Gurugram"
                       value={formLocation}
                       onChange={(e) => setFormLocation(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-ivory-50/70 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
@@ -1271,7 +1262,7 @@ export const AdminDashboard: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. Sector 57"
+                      placeholder="e.g. DLF Phase 5"
                       value={formSector}
                       onChange={(e) => setFormSector(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-ivory-50/70 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
@@ -1728,7 +1719,7 @@ export const AdminDashboard: React.FC = () => {
                                 <span>Call Customer</span>
                               </a>
                               <a
-                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${v.customerName}! Your site visit request with Guruji Property Gurugram on ${v.preferredDate} (${v.preferredTime}) for "${v.propertyTitle || 'Property'}" is confirmed. Please call 084471 95227 for directions.`)}`}
+                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${v.customerName}! Your site visit request with ${BUSINESS_INFO.name} on ${v.preferredDate} (${v.preferredTime}) for "${v.propertyTitle || 'Property'}" is confirmed. Please call ${BUSINESS_INFO.phone} for directions.`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
@@ -1855,7 +1846,7 @@ export const AdminDashboard: React.FC = () => {
                                 <span>Call Lead</span>
                               </a>
                               <a
-                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${enq.customerName}, thank you for enquiring with Guruji Property Gurugram regarding ${enq.propertyTitle || 'properties in Sector 57, Gurugram'}. How can we assist you today?`)}`}
+                                href={`https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello ${enq.customerName}, thank you for enquiring with ${BUSINESS_INFO.name} regarding ${enq.propertyTitle || 'properties in Gurugram'}. How can we assist you today?`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"

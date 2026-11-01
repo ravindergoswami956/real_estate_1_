@@ -82,7 +82,7 @@ export const TestimonialsSection: React.FC = () => {
               <span className="font-bold text-white text-sm ml-2">5.0 / 5.0 Star Track Record</span>
             </div>
             <p className="text-xs text-charcoal-300 max-w-lg">
-              Read all {BUSINESS_INFO.totalReviews} customer experiences on Google Maps or visit our office at SHOP-54, MKM Market, Sector 57, Gurugram.
+              Read all {BUSINESS_INFO.totalReviews} verified client experiences or visit our office at {BUSINESS_INFO.address.shop}, {BUSINESS_INFO.address.block}, {BUSINESS_INFO.address.city}.
             </p>
           </div>
 

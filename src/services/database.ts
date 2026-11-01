@@ -17,12 +17,12 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_SETTINGS: BusinessSettings = {
-  businessName: 'Guruji Property Gurugram',
+  businessName: 'Apex Realty Group',
   phone: '084471 95227',
   whatsapp: '918447195227',
-  address: 'SHOP-54, MKM Market Road, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122011',
+  address: 'Level 5, Horizon Executive Suites, Golf Course Road, DLF Phase 5, Sector 43, Gurugram, Haryana 122002',
   hours: 'Monday – Sunday: 9:30 AM – 8:30 PM',
-  googleMapsUrl: 'https://maps.google.com/?q=Guruji+Property+SHOP-54+MKM+Market+Road+Block+G+Sushant+Lok+2+Sector+57+Gurugram+Haryana+122011'
+  googleMapsUrl: 'https://maps.google.com/?q=Golf+Course+Road+DLF+Phase+5+Sector+43+Gurugram+Haryana+122002'
 };
 
 const INITIAL_PROPERTIES: Property[] = [];

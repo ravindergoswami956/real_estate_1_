@@ -9,7 +9,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   const services = [
     {
       title: 'Residential Buying & Selling',
-      desc: 'Guiding families and investors in acquiring premier builder floors, gated community apartments, and luxury villas across Sushant Lok 2, Sector 57, and Golf Course Road.',
+      desc: 'Guiding families and investors in acquiring premier builder floors, gated community apartments, and luxury villas across DLF Phase 5, Golf Course Road, and elite micro-markets.',
       icon: <Home className="w-5 h-5 text-champagne-600" />
     },
     {

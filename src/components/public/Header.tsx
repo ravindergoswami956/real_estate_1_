@@ -50,14 +50,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
             className="flex items-center gap-3.5 group text-left cursor-pointer"
           >
             <div className="w-10 h-10 rounded-lg bg-charcoal-900 border border-champagne-500/40 flex items-center justify-center text-champagne-400 font-serif font-black text-xl shadow-sm transition-transform group-hover:scale-105">
-              G
+              A
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-lg sm:text-xl text-charcoal-900 tracking-wider uppercase">
-                Guruji Property
+                {BUSINESS_INFO.name}
               </span>
               <span className="text-[10px] font-semibold text-champagne-700 tracking-widest uppercase">
-                Gurugram • Sector 57 • ★ 5.0
+                Gurugram • Golf Course Rd • ★ 5.0
               </span>
             </div>
           </button>
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSiteVisit, onOpenEnquiry }
             </a>
 
             <a
-              href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent('Hello Guruji Property Gurugram! I would like to enquire about properties.')}`}
+              href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(`Hello ${BUSINESS_INFO.name}! I would like to enquire about properties.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white transition-colors shadow-sm"

@@ -1,6 +1,6 @@
 export const BUSINESS_INFO = {
-  name: 'Guruji Property Gurugram',
-  category: 'Real Estate Consultant',
+  name: 'Apex Realty Group',
+  category: 'Premier Real Estate Consultancy',
   rating: 5.0,
   totalReviews: 374,
   phone: '084471 95227',
@@ -8,14 +8,14 @@ export const BUSINESS_INFO = {
   phoneRaw: '918447195227',
   whatsappRaw: '918447195227',
   address: {
-    shop: 'SHOP-54, MKM Market Road',
-    block: 'Block G, Sushant Lok 2',
-    sector: 'Sector 57',
+    shop: 'Level 5, Horizon Executive Suites',
+    block: 'Sector 43, Golf Course Road',
+    sector: 'DLF Phase 5',
     city: 'Gurugram',
     state: 'Haryana',
-    pincode: '122011',
-    full: 'SHOP-54, MKM Market Road, Block G, Sushant Lok 2, Sector 57, Gurugram, Haryana 122011'
+    pincode: '122002',
+    full: 'Level 5, Horizon Executive Suites, Golf Course Road, DLF Phase 5, Sector 43, Gurugram, Haryana 122002'
   },
   hours: 'Monday – Sunday: 9:30 AM – 8:30 PM',
-  googleMapsUrl: 'https://maps.google.com/?q=Guruji+Property+SHOP-54+MKM+Market+Road+Block+G+Sushant+Lok+2+Sector+57+Gurugram+Haryana+122011',
+  googleMapsUrl: 'https://maps.google.com/?q=Golf+Course+Road+DLF+Phase+5+Sector+43+Gurugram+Haryana+122002',
 };

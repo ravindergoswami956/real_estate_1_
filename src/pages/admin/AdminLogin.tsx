@@ -55,18 +55,18 @@ export const AdminLogin: React.FC = () => {
           className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-600 hover:text-champagne-700 mb-6 transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Return to Guruji Property Website</span>
+          <span>Return to {BUSINESS_INFO.name} Website</span>
         </button>
 
         <div className="w-14 h-14 rounded-2xl bg-charcoal-900 border border-champagne-500/40 text-champagne-400 flex items-center justify-center font-serif font-black text-2xl mx-auto shadow-md">
-          G
+          A
         </div>
 
         <h2 className="mt-4 text-2xl sm:text-3xl font-bold font-serif text-charcoal-900 tracking-tight">
           Admin Portal Login
         </h2>
         <p className="mt-1 text-xs text-charcoal-600 font-light">
-          {BUSINESS_INFO.name} • Sushant Lok 2, Sector 57, Gurugram
+          {BUSINESS_INFO.name} • Golf Course Road, DLF Phase 5, Gurugram
         </p>
       </div>
 
@@ -91,7 +91,7 @@ export const AdminLogin: React.FC = () => {
                   type="email"
                   required
                   autoComplete="email"
-                  placeholder="admin@gurujiproperty.com"
+                  placeholder="admin@apexrealty.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-sand-300 bg-ivory-50 text-xs text-charcoal-900 focus:outline-none focus:border-champagne-500"
@@ -136,7 +136,7 @@ export const AdminLogin: React.FC = () => {
           {/* Security Notice */}
           <div className="pt-4 border-t border-sand-100 flex items-center justify-center gap-1.5 text-[11px] text-charcoal-500">
             <ShieldCheck className="w-3.5 h-3.5 text-champagne-700" />
-            <span>Authorized Personnel Only • Sector 57 Gurugram Desk</span>
+            <span>Authorized Personnel Only • Executive Advisory Desk</span>
           </div>
 
         </div>

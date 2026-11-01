@@ -6,8 +6,8 @@ export const WhyChooseUs: React.FC = () => {
   const pillars = [
     {
       icon: <MapPin className="w-6 h-6 text-champagne-600" />,
-      title: 'Sector 57 Native Authority',
-      desc: 'Headquartered at MKM Market, Sushant Lok 2, Sector 57. We possess comprehensive street-by-street command over builder floors, plots, and luxury high-rises.'
+      title: 'Golf Course Road Authority',
+      desc: 'Headquartered at Horizon Executive Suites, DLF Phase 5. We possess comprehensive street-by-street command over luxury residences, corporate assets, and prestigious high-rises.'
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-champagne-600" />,
@@ -22,24 +22,24 @@ export const WhyChooseUs: React.FC = () => {
     {
       icon: <Award className="w-6 h-6 text-champagne-600" />,
       title: '5.0★ Verified Track Record',
-      desc: 'Consistently rated 5.0 out of 5 across 374 genuine client Google reviews. Trust and transparent dealings remain our core benchmark.'
+      desc: 'Consistently rated 5.0 out of 5 across 374 genuine client institutional reviews. Trust and transparent dealings remain our core benchmark.'
     }
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-white border-b border-sand-200">
+    <section id="why-choose-us" className="py-24 bg-white border-b border-sand-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold text-champagne-700 uppercase tracking-widest block mb-2">
-            The Guruji Difference
+            The Apex Difference
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-charcoal-900 leading-tight">
-            Why Choose Guruji Property
+            Why Choose {BUSINESS_INFO.name}
           </h2>
           <p className="text-sm text-charcoal-700/80 mt-3 font-light leading-relaxed">
-            Personalized advisory built upon local integrity, rigorous legal auditing, and unwavering client advocacy.
+            Personalized advisory built upon market integrity, rigorous legal auditing, and unwavering client advocacy.
           </p>
         </div>
 

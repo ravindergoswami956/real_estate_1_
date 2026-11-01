@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Property } from '../../types/property';
 import { X, MapPin, Bed, Bath, Maximize2, Phone, MessageCircle, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import { DatabaseService } from '../../services/database';
+import { BUSINESS_INFO } from '../../data/business';
 
 interface PropertyDetailModalProps {
   property: Property | null;
@@ -49,14 +50,14 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
       setPhone('');
       setMessage('');
     } catch (err) {
-      alert('Failed to send enquiry. Please contact 084471 95227 directly.');
+      alert(`Failed to send enquiry. Please contact ${BUSINESS_INFO.phone} directly.`);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const waLink = `https://wa.me/${property.contactWhatsApp || '918447195227'}?text=${encodeURIComponent(
-    `Hello Guruji Property! I am interested in "${property.title}" (Ref: ${property.id}, Price: ${property.price}). Please share more details.`
+  const waLink = `https://wa.me/${property.contactWhatsApp || BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
+    `Hello ${BUSINESS_INFO.name}! I am interested in "${property.title}" (Ref: ${property.id}, Price: ${property.price}). Please share more details.`
   )}`;
 
   return (

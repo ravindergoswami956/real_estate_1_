@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Phone, Lock, Star, Code2 } from 'lucide-react';
+import { Phone, Lock, Star, ShieldCheck } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
-import ravinderPhoto from '../../assets/ravinder-goswami.png';
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -36,7 +35,7 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="text-charcoal-400 text-xs leading-relaxed max-w-md font-light">
-              Premier real estate consultancy specializing in luxury builder floors, residences, and commercial assets across Sushant Lok 2, Sector 57, Golf Course Extension Road, and prestigious micro-markets in Gurugram.
+              Premier real estate consultancy specializing in luxury residences, corporate assets, penthouses, and bespoke builder floors across Golf Course Road, DLF Phase 5, and elite micro-markets in Gurugram.
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-900 border border-charcoal-800 text-champagne-400">
@@ -46,7 +45,7 @@ export const Footer: React.FC = () => {
                 ))}
               </div>
               <span className="text-[11px] font-semibold text-charcoal-200">
-                5.0 Google Rating • 374 Client Reviews
+                5.0 Rating • 374 Institutional Client Reviews
               </span>
             </div>
           </div>
@@ -74,12 +73,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button type="button" onClick={() => scrollTo('why-choose-us')} className="hover:text-champagne-400 transition-colors cursor-pointer text-left">
-                  Why Guruji Property
+                  Why {BUSINESS_INFO.name}
                 </button>
               </li>
               <li>
                 <button type="button" onClick={() => scrollTo('about')} className="hover:text-champagne-400 transition-colors cursor-pointer text-left">
-                  Leadership & Office
+                  Advisory & Office
                 </button>
               </li>
               <li>
@@ -115,28 +114,18 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Developer Credit Section: Developed by Ravinder Goswami */}
+        {/* Brand Excellence Banner (Clean, Professional without personal photo) */}
         <div className="py-6 border-b border-charcoal-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5 bg-charcoal-900/90 border border-charcoal-800 px-4 py-2.5 rounded-2xl shadow-sm">
-            <div className="relative">
-              <img 
-                src={ravinderPhoto} 
-                alt="Ravinder Goswami" 
-                className="w-11 h-11 rounded-full object-cover border-2 border-champagne-500 shadow-md"
-              />
-              <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-charcoal-900 rounded-full" title="Active Developer"></span>
-            </div>
+          <div className="flex items-center gap-3 bg-charcoal-900/90 border border-charcoal-800 px-4 py-2.5 rounded-2xl shadow-sm">
+            <ShieldCheck className="w-5 h-5 text-champagne-400 shrink-0" />
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[11px] uppercase tracking-wider text-charcoal-400 font-medium">Developed by</span>
-                <span className="text-xs font-bold text-champagne-400 font-serif">Ravinder Goswami</span>
-              </div>
-              <p className="text-[10px] text-charcoal-400">Full-Stack Real Estate Web Solutions</p>
+              <span className="text-xs font-bold text-white font-serif">{BUSINESS_INFO.name}</span>
+              <p className="text-[10px] text-charcoal-400">Fiduciary Advisory & Luxury Asset Management</p>
             </div>
           </div>
 
           <div className="text-center sm:text-right text-[11px] text-charcoal-400">
-            <p className="text-charcoal-300 font-medium">Crafted with luxury precision for Guruji Property Gurugram</p>
+            <p className="text-charcoal-300 font-medium">Verified Property Registry • DLF Phase 5 • Golf Course Road</p>
             <p className="text-champagne-500/80 text-[10px]">High Performance • Instant Cloud Sync • Secure Portal</p>
           </div>
         </div>
@@ -144,7 +133,7 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright & Working Admin Link */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-charcoal-500">
           <div>
-            © {new Date().getFullYear()} Guruji Property Gurugram. All rights reserved.
+            © {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">

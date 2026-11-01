@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, MapPin, Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Star, Building2, Phone, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/business';
 
 export const About: React.FC = () => {
@@ -8,7 +8,7 @@ export const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Authentic Portrait in Luxury Frame */}
+          {/* Architectural Luxury Showcase (Replaces Personal Portrait) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative group max-w-sm sm:max-w-md w-full">
               {/* Subtle Champagne Accent Halo */}
@@ -16,19 +16,19 @@ export const About: React.FC = () => {
 
               <div className="relative rounded-2xl overflow-hidden border border-sand-300 bg-ivory-50 shadow-luxury">
                 <img
-                  src="/founder.png"
-                  alt="Principal Consultant - Guruji Property Gurugram"
-                  className="w-full h-auto object-cover aspect-[3/4]"
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                  alt="Apex Realty Group - Commercial & Residential Advisory"
+                  className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[3/4]"
                 />
 
                 <div className="p-5 bg-white border-t border-sand-200">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-serif font-bold text-charcoal-900 text-sm">
-                        Guruji Property Leadership
+                        {BUSINESS_INFO.name}
                       </h4>
                       <p className="text-xs text-champagne-700 font-medium mt-0.5">
-                        Principal Real Estate Consultant
+                        Premier Real Estate Advisory
                       </p>
                     </div>
 
@@ -49,18 +49,18 @@ export const About: React.FC = () => {
                 About The Firm
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-charcoal-900 leading-tight">
-                Deep Gurugram Roots. <br />
+                Prime Gurugram Horizons. <br />
                 <span className="italic font-light text-champagne-700">Uncompromising Ethics.</span>
               </h2>
             </div>
 
             <p>
-              Operating from our established consulting office at <strong className="text-charcoal-900 font-semibold">{BUSINESS_INFO.address.full}</strong>, 
-              <strong> Guruji Property</strong> represents buyers, sellers, landlords, and investors with fiduciary rigor.
+              Operating from our executive advisory office at <strong className="text-charcoal-900 font-semibold">{BUSINESS_INFO.address.full}</strong>, 
+              <strong> {BUSINESS_INFO.name}</strong> represents buyers, sellers, landlords, and corporate investors with fiduciary rigor.
             </p>
 
             <p>
-              Gurugram’s real estate landscape requires street-level precision. From independent builder floors in Sushant Lok 2 and Sector 57 to trophy penthouses on Golf Course Road and Grade-A commercial floors in Cyber City, we provide our clients with accurate pricing data, clean legal vetting, and discreet representation.
+              Gurugram’s luxury real estate landscape requires market-proven expertise. From iconic penthouses on Golf Course Road and bespoke builder floors in DLF Phase 5 to Grade-A corporate towers in Cyber City, we provide our clients with institutional-grade pricing intelligence, comprehensive legal due diligence, and discreet representation.
             </p>
 
             {/* Micro Highlights */}
@@ -68,20 +68,20 @@ export const About: React.FC = () => {
               <div className="p-4 rounded-xl bg-ivory-50 border border-sand-200 space-y-1">
                 <div className="flex items-center gap-2 font-serif font-semibold text-charcoal-900 text-xs">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Physical Office at MKM Market</span>
+                  <span>Executive Suites at Golf Course Road</span>
                 </div>
                 <p className="text-xs text-charcoal-600 font-light">
-                  Always accessible 7 days a week for in-person consultations.
+                  Centrally located in DLF Phase 5 for seamless client consultations.
                 </p>
               </div>
 
               <div className="p-4 rounded-xl bg-ivory-50 border border-sand-200 space-y-1">
                 <div className="flex items-center gap-2 font-serif font-semibold text-charcoal-900 text-xs">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>100% Genuine Inventory</span>
+                  <span>100% Verified Inventory</span>
                 </div>
                 <p className="text-xs text-charcoal-600 font-light">
-                  Direct owner and builder alignments without deceptive intermediaries.
+                  Direct owner and developer alignments without deceptive intermediaries.
                 </p>
               </div>
             </div>

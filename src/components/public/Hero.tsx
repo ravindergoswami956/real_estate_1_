@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenSiteVisit }) =
           <Star className="w-3.5 h-3.5 fill-current text-champagne-400" />
           <span>Rated 5.0 (374 Reviews)</span>
           <span className="text-charcoal-600">•</span>
-          <span className="text-sand-100">Sector 57, Gurugram</span>
+          <span className="text-sand-100">Golf Course Road, DLF Phase 5</span>
         </div>
 
         {/* Required Headline */}
@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenSiteVisit }) =
 
         {/* Required Subtitle */}
         <p className="text-base sm:text-xl text-sand-100/90 max-w-2xl mx-auto font-light leading-relaxed mb-10 tracking-wide">
-          Discover premium homes, commercial spaces, and investment opportunities in Gurugram with Guruji Property.
+          Discover premium homes, luxury residences, and corporate investment opportunities with {BUSINESS_INFO.name}.
         </p>
 
         {/* Required Buttons */}
@@ -64,8 +64,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenSiteVisit }) =
         {/* Discreet Micro-Footer Stats */}
         <div className="pt-16 mt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left max-w-3xl mx-auto">
           <div>
-            <span className="block font-serif text-2xl font-bold text-white">Sector 57</span>
-            <span className="text-[11px] text-sand-200 uppercase tracking-wider">MKM Market Office</span>
+            <span className="block font-serif text-2xl font-bold text-white">DLF Phase 5</span>
+            <span className="text-[11px] text-sand-200 uppercase tracking-wider">Golf Course Road</span>
           </div>
           <div>
             <span className="block font-serif text-2xl font-bold text-champagne-400">100%</span>

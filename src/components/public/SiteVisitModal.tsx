@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Property } from '../../types/property';
 import { X, Calendar, Clock, CheckCircle2, Users, AlertCircle, Phone } from 'lucide-react';
 import { DatabaseService } from '../../services/database';
+import { BUSINESS_INFO } from '../../data/business';
 
 interface SiteVisitModalProps {
   isOpen: boolean;
@@ -37,7 +38,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({
       setPropertyTitle(properties[0].title);
       setPropertyId(properties[0].id);
     } else {
-      setPropertyTitle('General Property Consultation in Sector 57');
+      setPropertyTitle('General Property Consultation in Gurugram');
       setPropertyId(undefined);
     }
     setErrorMessage(null);
@@ -165,7 +166,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({
           <div>
             <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-700 uppercase tracking-wider mb-1">
               <Calendar className="w-4 h-4 text-amber-600" />
-              <span>Guruji Property Gurugram</span>
+              <span>{BUSINESS_INFO.name}</span>
             </div>
 
             <h3 className="font-serif font-bold text-slate-900 text-xl mb-1">
@@ -203,8 +204,8 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({
                       {p.title} — {p.price} ({p.location})
                     </option>
                   ))}
-                  <option value="General Property Consultation in Sector 57">
-                    General Property Consultation in Sector 57
+                  <option value="General Property Consultation in Gurugram">
+                    General Property Consultation in Gurugram
                   </option>
                 </select>
               </div>

@@ -103,7 +103,7 @@ export const AuthService = {
         password.trim() === 'Guruji@Sector57';
 
       if (isAuthorized) {
-        const adminEmail = cleanEmail || 'admin@gurujiproperty.com';
+        const adminEmail = cleanEmail || 'admin@apexrealty.com';
         const user: AdminUser = {
           id: `admin-${Date.now()}`,
           email: adminEmail,

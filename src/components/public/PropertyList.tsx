@@ -77,7 +77,7 @@ export const PropertyList: React.FC<PropertyListProps> = ({
               Featured Properties in Gurugram
             </h2>
             <p className="text-sm text-charcoal-700/80 mt-2 font-light">
-              Refined builder floors, luxury residences, and commercial real estate managed through our Sector 57 office.
+              Refined residences, luxury penthouses, and commercial real estate managed through our executive advisory office.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export const PropertyList: React.FC<PropertyListProps> = ({
               No Published Properties Matching Criteria
             </h3>
             <p className="text-xs text-charcoal-700/80 leading-relaxed">
-              We manage exclusive off-market residences and commercial mandates that are not listed online. Contact Guruji Property at <strong className="text-charcoal-900">084471 95227</strong> for live private inventory.
+              We manage exclusive off-market residences and commercial mandates that are not listed online. Contact {BUSINESS_INFO.name} at <strong className="text-charcoal-900">{BUSINESS_INFO.phoneDisplay}</strong> for live private inventory.
             </p>
             <div className="pt-2">
               <button
@@ -181,7 +181,7 @@ export const PropertyList: React.FC<PropertyListProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((property) => {
               const waLink = `https://wa.me/${property.contactWhatsApp || BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
-                `Hello Guruji Property! I am interested in exploring "${property.title}" (Ref: ${property.id}, Price: ${property.price}). Please share more details.`
+                `Hello ${BUSINESS_INFO.name}! I am interested in exploring "${property.title}" (Ref: ${property.id}, Price: ${property.price}). Please share more details.`
               )}`;
 
               return (
