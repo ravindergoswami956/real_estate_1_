@@ -18,8 +18,8 @@ const STORAGE_KEYS = {
 
 const DEFAULT_SETTINGS: BusinessSettings = {
   businessName: 'Apex Realty Group',
-  phone: '084471 95227',
-  whatsapp: '918447195227',
+  phone: '+91 123xxxxxxx',
+  whatsapp: '91123xxxxxxx',
   address: 'Level 5, Horizon Executive Suites, Golf Course Road, DLF Phase 5, Sector 43, Gurugram, Haryana 122002',
   hours: 'Monday – Sunday: 9:30 AM – 8:30 PM',
   googleMapsUrl: 'https://maps.google.com/?q=Golf+Course+Road+DLF+Phase+5+Sector+43+Gurugram+Haryana+122002'

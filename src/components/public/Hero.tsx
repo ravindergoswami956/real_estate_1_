@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenSiteVisit }) =
             <span className="text-[11px] text-sand-200 uppercase tracking-wider">374 Google Reviews</span>
           </div>
           <div>
-            <span className="block font-serif text-2xl font-bold text-champagne-400">084471 95227</span>
+            <span className="block font-serif text-2xl font-bold text-champagne-400">{BUSINESS_INFO.phoneDisplay}</span>
             <span className="text-[11px] text-sand-200 uppercase tracking-wider">Direct Consultation</span>
           </div>
         </div>

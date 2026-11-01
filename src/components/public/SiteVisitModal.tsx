@@ -103,7 +103,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({
     } catch (err: any) {
       console.error('Site visit submission error:', err);
       setErrorMessage(
-        err?.message || 'Failed to submit site visit request. Please check your connection or call 084471 95227 directly.'
+        err?.message || `Failed to submit site visit request. Please check your connection or call ${BUSINESS_INFO.phoneDisplay} directly.`
       );
     } finally {
       setIsSubmitting(false);

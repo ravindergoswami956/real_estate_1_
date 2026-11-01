@@ -192,11 +192,11 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({
           {/* Action Row */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href="tel:08447195227"
+              href={`tel:${BUSINESS_INFO.phoneRaw}`}
               className="flex-1 min-w-[140px] py-3 rounded-lg bg-slate-900 text-white text-xs font-semibold flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>Call 084471 95227</span>
+              <span>Call {BUSINESS_INFO.phoneDisplay}</span>
             </a>
 
             <a

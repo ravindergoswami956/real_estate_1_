@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
       setBudget('');
       setMessage('');
     } catch (err) {
-      setErrorMessage('Failed to send enquiry to database. Please call us directly at 084471 95227.');
+      setErrorMessage(`Failed to send enquiry to database. Please call us directly at ${BUSINESS_INFO.phoneDisplay}.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -122,7 +122,7 @@ export const Contact: React.FC = () => {
                       rel="noopener noreferrer"
                       className="text-emerald-700 font-bold hover:underline text-sm block"
                     >
-                      +91 84471 95227
+                      {BUSINESS_INFO.phoneDisplay}
                     </a>
                     <span className="text-[11px] text-charcoal-400">Instant layout brochures & video walk-throughs</span>
                   </div>
